@@ -1,10 +1,20 @@
 import sys
 import os
 from PIL import Image
-
+# Ensure that 2 file paths were entered in the terminal
+if(len(sys.argv) < 3):
+    print('Please try again and enter 2 file paths')
+    quit()
 # grab the first and second arguments from the Terminal
 from_file = sys.argv[1]
 to_file = sys.argv[2]
+
+while True:
+    if len(from_file) < 1 or len(to_file) < 1:
+        print("Please try again and enter 2 file paths.")
+        quit()
+    else:
+        break
 
 # ensure that Terminal is in fact a file path
 if not from_file.endswith('/'):
