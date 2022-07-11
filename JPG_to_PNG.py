@@ -5,16 +5,15 @@ from PIL import Image
 if(len(sys.argv) < 3):
     print('Please try again and enter 2 file paths')
     quit()
-# grab the first and second arguments from the Terminal
+
+# grab the first and second arguments from the Terminal, ensure they aren't blank
 from_file = sys.argv[1]
 to_file = sys.argv[2]
 
-while True:
-    if len(from_file) < 1 or len(to_file) < 1:
-        print("Please try again and enter 2 file paths.")
-        quit()
-    else:
-        break
+if len(from_file) < 1 or len(to_file) < 1:
+    print("Please try again and enter 2 file paths.")
+    quit()
+
 
 # ensure that Terminal is in fact a file path
 if not from_file.endswith('/'):
