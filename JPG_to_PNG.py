@@ -15,9 +15,10 @@ if len(from_file) < 1 or len(to_file) < 1:
     quit()
 
 
-# ensure that Terminal is in fact a file path
-if not from_file.endswith('/'):
-    from_file += '/'
+# ensure that Terminal arguments are in fact directories
+if os.path.isdir(from_file):
+    if not from_file.endswith('/'):
+        from_file += '/'
 
 if not to_file.endswith('/'):
     to_file += '/'
